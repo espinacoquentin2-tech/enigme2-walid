@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: "Press Start 2P", monospace;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#gba-container {
+  position: relative;
+  width: 1000px; /* Taille de la console */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gba-overlay {
+  width: 100%;
+  pointer-events: none; /* Indispensable pour cliquer sur les boutons à travers l'image */
+  z-index: 10;
+}
+
+#screen {
+  position: absolute;
+  /* On fait une boîte plus grande pour boucher tous les trous */
+  width: 450px; 
+  height: 350px;
+  
+  /* Centrage précis sous l'overlay */
+  top: 48%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background: #001f1f;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#screen-content {
+  /* Cette boîte correspond à la zone visible réelle (le trou) */
+  width: 415px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #00ffcc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+h2 { font-size: 10px; margin-bottom: 12px; width: 100%; }
+.codes { font-size: 8px; line-height: 1.6; margin-bottom: 15px; width: 100%; }
+
+#slots-container { display: flex; gap: 8px; margin-bottom: 15px; justify-content: center; width: 100%; }
+.word { display: flex; gap: 2px; }
+.letter-slot {
+  width: 15px;
+  height: 20px;
+  border-bottom: 2px solid #00ffcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+}
+
+#answer { position: absolute; opacity: 0; }
+
+button {
+  padding: 8px 12px;
+  border: 2px solid #00ffcc;
+  background: black;
+  color: #00ffcc;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 9px;
+}
+
+.pokemon {
+  position: absolute;
+  width: 60px;
+  opacity: 0.4;
+  z-index: 1;
+  transition: all 5s linear;
+}
+
+.shake { animation: shake 0.5s both; }
+@keyframes shake {
+  10%, 90% { transform: translate3d(-2px, -50%, 0); }
+  20%, 80% { transform: translate3d(4px, -50%, 0); }
+  30%, 50%, 70% { transform: translate3d(-6px, -50%, 0); }
+  40%, 60% { transform: translate3d(6px, -50%, 0); }
+}
+
+.gameover { color: #ff4444; font-size: 10px; margin-top: 5px; width: 100%; }

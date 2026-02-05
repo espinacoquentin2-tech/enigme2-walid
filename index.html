@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Pokukumon : Version EVG</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gba-container">
+  <div id="screen">
+    <div id="screen-content">
+      <h2>Pokukumon : Version EVG</h2>
+      <div class="codes">
+        0101 - 0494 - 1000<br>
+        0321 - 0493 - 0887 - 0206 - 0006<br>
+        0937 - 0184 - 0695<br>
+        0012 - 0160 - 0643 - 1021 - 0583
+      </div>
+
+      <div id="slots-container">
+          <div class="word" id="word1"></div>
+          <div class="word" id="word2"></div>
+          <div class="word" id="word3"></div>
+          <div class="word" id="word4"></div>
+      </div>
+
+      <input id="answer" maxlength="16" autocomplete="off" autofocus>
+      
+      <button onclick="checkAnswer()">VALIDER</button>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <img src="gba.png" id="gba-overlay" alt="Game Boy Advance">
+</div>
+
+<audio id="bgm" src="pokemon-route.mp3" loop></audio>
+<audio id="successSound" src="https://www.myinstants.com/media/sounds/pokemon-level-up.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
